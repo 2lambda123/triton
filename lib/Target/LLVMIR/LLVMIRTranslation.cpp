@@ -333,7 +333,8 @@ translateTritonGPUToLLVMIR(llvm::LLVMContext *llvmContext,
   printingFlags.elideLargeElementsAttrs(16);
   printingFlags.enableDebugInfo();
   pm.enableIRPrinting(
-      /*shouldPrintBeforePass=*/nullptr,
+      /*shouldPrintBeforePass=*/
+      nullptr,
       /*shouldPrintAfterPass=*/
       [](mlir::Pass *pass, mlir::Operation *) {
         return ::triton::tools::getBoolEnv("MLIR_ENABLE_DUMP");
