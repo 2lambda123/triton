@@ -391,7 +391,7 @@ def bench_flash_attention(BATCH, H, N_CTX, D_HEAD, causal, mode, provider, dtype
         elif FLASH_VER == 2:
             fn = lambda: flash_attn_func(qkv, causal=causal)
         else:
-            raise ValueError(f'unknown {FLASH_VER = }')
+            raise ValueError(f'unknown {FLASH_VER=}')
         if mode == 'bwd':
             o = fn()
             do = torch.randn_like(o)
